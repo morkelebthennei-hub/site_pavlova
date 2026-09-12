@@ -1,28 +1,16 @@
 import Image from "next/image"
-import { Phone } from "lucide-react"
 
 import contacts from "@/content/contacts.json"
 import { Card, CardContent } from "@/components/ui/card"
 import { VkIcon } from "@/components/icons/vk-icon"
 import { TelegramIcon } from "@/components/icons/telegram-icon"
 import { InstagramIcon } from "@/components/icons/instagram-icon"
+import { PhoneCard } from "@/components/contacts/phone-card"
 
 export function ContactCards() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <Card>
-        <CardContent className="flex items-center gap-4">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            <Phone className="size-5" />
-          </span>
-          <div>
-            <p className="text-sm text-muted-foreground">Телефон</p>
-            <a href={contacts.phone.href} className="font-medium hover:underline">
-              {contacts.phone.display}
-            </a>
-          </div>
-        </CardContent>
-      </Card>
+      <PhoneCard />
 
       <a href={contacts.vk.url} target="_blank" rel="noopener noreferrer">
         <Card className="transition-colors hover:bg-muted/50">
