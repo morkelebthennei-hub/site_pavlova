@@ -1,10 +1,9 @@
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { getExperienceLabel } from "@/lib/experience"
+import { ExperienceStat } from "@/components/experience-stat"
 
 const stats = [
-  { value: getExperienceLabel(), label: "опыта" },
   { value: "103", label: "витража создано" },
   { value: "49", label: "уже нашли свой дом" },
 ]
@@ -38,6 +37,11 @@ export function AboutHero() {
           <li>— и особая любовь — нуарные мистические сюжеты</li>
         </ul>
         <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+          <div>
+            <dt className="sr-only">опыта</dt>
+            <ExperienceStat />
+            <p className="text-sm text-muted-foreground">опыта</p>
+          </div>
           {stats.map((stat) => (
             <div key={stat.label}>
               <dt className="sr-only">{stat.label}</dt>
