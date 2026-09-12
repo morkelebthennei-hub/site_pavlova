@@ -1,9 +1,10 @@
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
+import { getExperienceLabel } from "@/lib/experience"
 
 const stats = [
-  { value: "2 года", label: "опыта" },
+  { value: getExperienceLabel(), label: "опыта" },
   { value: "103", label: "витража создано" },
   { value: "49", label: "уже нашли свой дом" },
 ]
