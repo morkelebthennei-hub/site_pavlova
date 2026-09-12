@@ -1,10 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { XIcon } from "lucide-react"
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
 
-import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -56,7 +54,10 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
           className="fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 outline-none duration-100 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"
         >
           <DialogTitle className="sr-only">{item.title}</DialogTitle>
-          <div className="relative h-[85vh] w-[85vw]">
+          <DialogClose
+            className="relative block h-[85vh] w-[85vw] cursor-zoom-out border-0 bg-transparent p-0"
+            aria-label={`Закрыть просмотр «${item.title}»`}
+          >
             <Image
               src={item.image}
               alt={item.title}
@@ -64,18 +65,6 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
               sizes="85vw"
               className="object-contain"
             />
-          </div>
-          <DialogClose
-            render={
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-2 right-2 text-white hover:bg-white/10 hover:text-white"
-              />
-            }
-          >
-            <XIcon className="size-6" />
-            <span className="sr-only">Закрыть</span>
           </DialogClose>
         </DialogPrimitive.Popup>
       </DialogPortal>
