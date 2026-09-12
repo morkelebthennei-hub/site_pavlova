@@ -13,5 +13,11 @@
     "label": "Телеграм-канал",
     "handle": "@art.ohrey",
     "url": "https://t.me/art.ohrey"
+  },
+  "instagram": {
+    "label": "Instagram",
+    "handle": "@art.ohrey",
+    "url": "https://www.instagram.com/art.ohrey",
+    "avatar": "/images/instagram-avatar.jpg"
   }
 }

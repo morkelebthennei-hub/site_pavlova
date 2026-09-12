@@ -15,7 +15,7 @@ const jsonLd = {
       url: siteConfig.url,
       description: siteConfig.description,
       founder: { "@id": `${siteConfig.url}/#person` },
-      sameAs: [contacts.vk.url, contacts.telegram.url],
+      sameAs: [contacts.vk.url, contacts.telegram.url, contacts.instagram.url],
     },
     {
       "@type": "Person",
