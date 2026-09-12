@@ -1,0 +1,37 @@
+[
+  {
+    "placeholder": "заглушка1",
+    "id": "dawn-guardian",
+    "title": "Страж рассвета",
+    "description": "Витражное панно с фигурой в плаще на фоне лучистого рассветного круга — тёплые оттенки на холодном синем.",
+    "image": "/images/portfolio/01-dawn-guardian.svg"
+  },
+  {
+    "placeholder": "заглушка2",
+    "id": "deep-guardian",
+    "title": "Хранительница глубин",
+    "description": "Крылатый силуэт среди бирюзовых граней — панно навеяно морской глубиной и светом сквозь толщу воды.",
+    "image": "/images/portfolio/02-deep-guardian.svg"
+  },
+  {
+    "placeholder": "заглушка3",
+    "id": "night-blade",
+    "title": "Ночной клинок",
+    "description": "Фигура в капюшоне с клинком на фоне лунного витража в глубоких фиолетовых тонах.",
+    "image": "/images/portfolio/03-night-blade.svg"
+  },
+  {
+    "placeholder": "заглушка4",
+    "id": "spark",
+    "title": "Искра",
+    "description": "Динамичная композиция с эмблемой-молнией — контраст электрик-фиолетового и яркого жёлтого.",
+    "image": "/images/portfolio/04-spark.svg"
+  },
+  {
+    "placeholder": "заглушка5",
+    "id": "shield-warden",
+    "title": "Страж щита",
+    "description": "Фигура со щитом и гранёной эмблемой на груди — тёплая охра и глубокий бордовый.",
+    "image": "/images/portfolio/05-shield-warden.svg"
+  }
+]

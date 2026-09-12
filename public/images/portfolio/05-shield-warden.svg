@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+  <rect width="400" height="400" fill="#0c0a0a" />
+  <clipPath id="roundel">
+    <circle cx="200" cy="200" r="187" />
+  </clipPath>
+  <g clip-path="url(#roundel)">
+    <g>
+      <polygon points="200.0,200.0 200.0,145.0 238.9,161.1" fill="#161616" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 238.9,161.1 255.0,200.0" fill="#33232a" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 255.0,200.0 238.9,238.9" fill="#6b2f3a" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 238.9,238.9 200.0,255.0" fill="#b3495a" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 200.0,255.0 161.1,238.9" fill="#e2a06b" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 161.1,238.9 145.0,200.0" fill="#0c0c0c" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 145.0,200.0 161.1,161.1" fill="#161616" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,200.0 161.1,161.1 200.0,145.0" fill="#33232a" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,145.0 200.0,85.0 281.3,118.7 238.9,161.1" fill="#6b2f3a" stroke="#12121a" stroke-width="3" />
+      <polygon points="238.9,161.1 281.3,118.7 315.0,200.0 255.0,200.0" fill="#b3495a" stroke="#12121a" stroke-width="3" />
+      <polygon points="255.0,200.0 315.0,200.0 281.3,281.3 238.9,238.9" fill="#e2a06b" stroke="#12121a" stroke-width="3" />
+      <polygon points="238.9,238.9 281.3,281.3 200.0,315.0 200.0,255.0" fill="#0c0c0c" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,255.0 200.0,315.0 118.7,281.3 161.1,238.9" fill="#161616" stroke="#12121a" stroke-width="3" />
+      <polygon points="161.1,238.9 118.7,281.3 85.0,200.0 145.0,200.0" fill="#33232a" stroke="#12121a" stroke-width="3" />
+      <polygon points="145.0,200.0 85.0,200.0 118.7,118.7 161.1,161.1" fill="#6b2f3a" stroke="#12121a" stroke-width="3" />
+      <polygon points="161.1,161.1 118.7,118.7 200.0,85.0 200.0,145.0" fill="#b3495a" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,85.0 200.0,15.0 330.8,69.2 281.3,118.7" fill="#e2a06b" stroke="#12121a" stroke-width="3" />
+      <polygon points="281.3,118.7 330.8,69.2 385.0,200.0 315.0,200.0" fill="#0c0c0c" stroke="#12121a" stroke-width="3" />
+      <polygon points="315.0,200.0 385.0,200.0 330.8,330.8 281.3,281.3" fill="#161616" stroke="#12121a" stroke-width="3" />
+      <polygon points="281.3,281.3 330.8,330.8 200.0,385.0 200.0,315.0" fill="#33232a" stroke="#12121a" stroke-width="3" />
+      <polygon points="200.0,315.0 200.0,385.0 69.2,330.8 118.7,281.3" fill="#6b2f3a" stroke="#12121a" stroke-width="3" />
+      <polygon points="118.7,281.3 69.2,330.8 15.0,200.0 85.0,200.0" fill="#b3495a" stroke="#12121a" stroke-width="3" />
+      <polygon points="85.0,200.0 15.0,200.0 69.2,69.2 118.7,118.7" fill="#e2a06b" stroke="#12121a" stroke-width="3" />
+      <polygon points="118.7,118.7 69.2,69.2 200.0,15.0 200.0,85.0" fill="#0c0c0c" stroke="#12121a" stroke-width="3" />
+    </g>
+    <g>
+      <polygon points="172,172 228,172 218,318 182,318" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <polygon points="182,318 200,318 194,362 176,362" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <polygon points="200,318 218,318 224,362 206,362" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <polygon points="172,178 156,240 168,244 180,184" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <polygon points="228,178 244,240 232,244 220,184" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <circle cx="200" cy="140" r="27" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <polygon points="200,172 236,186 232,268 200,300 168,268 164,186" fill="#171423" stroke="#12121a" stroke-width="3"  />
+      <polygon points="200,206 224,236 200,266 176,236" fill="none" stroke="#12121a" stroke-width="6" />
+    </g>
+  </g>
+  <circle cx="200" cy="200" r="187" fill="none" stroke="#12121a" stroke-width="6" />
+</svg>

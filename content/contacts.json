@@ -1,0 +1,17 @@
+{
+  "phone": {
+    "display": "+7 921 554-15-57",
+    "href": "tel:+79215541557"
+  },
+  "vk": {
+    "label": "ВКонтакте",
+    "handle": "vk.ru/art.ohrey",
+    "url": "https://vk.ru/art.ohrey",
+    "avatar": "/images/vk-community-avatar.jpg"
+  },
+  "telegram": {
+    "label": "Телеграм-канал",
+    "handle": "@art.ohrey",
+    "url": "https://t.me/art.ohrey"
+  }
+}
