@@ -1,37 +1,68 @@
 [
   {
-    "placeholder": "заглушка1",
-    "id": "dawn-guardian",
-    "title": "Страж рассвета",
-    "description": "Витражное панно с фигурой в плаще на фоне лучистого рассветного круга — тёплые оттенки на холодном синем.",
-    "image": "/images/portfolio/01-dawn-guardian.svg"
+    "id": "harley-quinn",
+    "title": "Харли Квинн",
+    "description": "Витражное панно в стиле комикс-разворота — динамичная сцена с фирменной эксцентричной подачей персонажа.",
+    "image": "/images/portfolio/harley-quinn.jpg"
   },
   {
-    "placeholder": "заглушка2",
-    "id": "deep-guardian",
-    "title": "Хранительница глубин",
-    "description": "Крылатый силуэт среди бирюзовых граней — панно навеяно морской глубиной и светом сквозь толщу воды.",
-    "image": "/images/portfolio/02-deep-guardian.svg"
+    "id": "joker-portrait",
+    "title": "Джокер. Портрет",
+    "description": "Крупный витражный портрет — контраст мертвенно-белого лица, зелёных волос и глубокого пурпура костюма.",
+    "image": "/images/portfolio/joker-portrait.jpg"
   },
   {
-    "placeholder": "заглушка3",
-    "id": "night-blade",
-    "title": "Ночной клинок",
-    "description": "Фигура в капюшоне с клинком на фоне лунного витража в глубоких фиолетовых тонах.",
-    "image": "/images/portfolio/03-night-blade.svg"
+    "id": "joker-bat-signal",
+    "title": "Джокер и бэт-сигнал",
+    "description": "Композиция на фоне ночного города и жёлтого прожекторного луча — драматичный витражный нуар.",
+    "image": "/images/portfolio/joker-bat-signal.jpg"
   },
   {
-    "placeholder": "заглушка4",
-    "id": "spark",
-    "title": "Искра",
-    "description": "Динамичная композиция с эмблемой-молнией — контраст электрик-фиолетового и яркого жёлтого.",
-    "image": "/images/portfolio/04-spark.svg"
+    "id": "pumpkin-duet",
+    "title": "Тыквоголовый дуэт",
+    "description": "Авторская готическая композиция — две тыквоголовые фигуры в тёмной эстетике, чёрно-белая графика с акцентом крови.",
+    "image": "/images/portfolio/pumpkin-duet.jpg"
   },
   {
-    "placeholder": "заглушка5",
-    "id": "shield-warden",
-    "title": "Страж щита",
-    "description": "Фигура со щитом и гранёной эмблемой на груди — тёплая охра и глубокий бордовый.",
-    "image": "/images/portfolio/05-shield-warden.svg"
+    "id": "edward-scissorhands",
+    "title": "Эдвард Руки-ножницы",
+    "description": "Витражный портрет с фирменным бледным гримом и лезвиями-пальцами — дань уважения культовому образу.",
+    "image": "/images/portfolio/edward-scissorhands.jpg"
+  },
+  {
+    "id": "joker-blade",
+    "title": "Джокер. Клинок",
+    "description": "Крупный план с лезвием у лица — резкий контраст зелёного и кроваво-красного в витражном стекле.",
+    "image": "/images/portfolio/joker-blade.jpg"
+  },
+  {
+    "id": "batman-guardian",
+    "title": "Бэтмен",
+    "description": "Полнофигурная витражная композиция на фоне лунного диска — глубокие тона и графичный силуэт.",
+    "image": "/images/portfolio/batman-guardian.jpg"
+  },
+  {
+    "id": "batman-joker-duo",
+    "title": "Бэтмен и Джокер",
+    "description": "Дуэльная сцена культовых противников — витражная интерпретация в стиле комикс-нуара.",
+    "image": "/images/portfolio/batman-joker-duo.jpg"
+  },
+  {
+    "id": "venom",
+    "title": "Веном",
+    "description": "Экспрессивный витражный портрет с фактурной паутинной подложкой — плотные чёрные грани и хищный оскал.",
+    "image": "/images/portfolio/venom.jpg"
+  },
+  {
+    "id": "beetlejuice-lydia",
+    "title": "Битлджус и Лидия",
+    "description": "Парный витражный портрет культовых героев на фоне лунного неба — узнаваемая эксцентричная эстетика.",
+    "image": "/images/portfolio/beetlejuice-lydia.jpg"
+  },
+  {
+    "id": "silver-muse",
+    "title": "Серебряная муза",
+    "description": "Авторский стилизованный женский образ с объёмными серебристыми волосами — мягкая, но контрастная витражная графика.",
+    "image": "/images/portfolio/silver-muse.jpg"
   }
 ]
