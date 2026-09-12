@@ -1,8 +1,6 @@
 services:
   app:
-    build:
-      context: ..
-      dockerfile: deploy/Dockerfile
+    image: ghcr.io/morkelebthennei-hub/site_pavlova:latest
     container_name: art-ohrey-app
     restart: unless-stopped
     ports:

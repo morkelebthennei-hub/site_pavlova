@@ -57,37 +57,20 @@ Alternatives не рассматриваем: Vue, Svelte, Astro, WordPress — 
 
 ## Инфраструктура и деплой
 
-⚠️ **2026-09-12: план ниже (VPS + root + Docker) под вопросом — см. «Реальное состояние хостинга» сразу за этим блоком.** Оригинальный план оставлен как есть, пока не проясним с reg.ru.
-
-- Хостинг: VPS на reg.ru, Ubuntu (последняя LTS)
-- Docker: multi-stage build, `output: standalone` в `next.config`, Docker Compose
-- Nginx как reverse proxy: HTTPS + gzip
+- Хостинг: VPS на reg.ru, Ubuntu 26.04 LTS — подтверждено по SSH, root-доступ есть. (Первый купленный тариф оказался shared-хостингом с ISPmanager без root — см. в логе решений; сейчас используется второй, настоящий VPS.)
+- ⚠️ Сервер маленький: 1 CPU, ~1 ГБ RAM, поэтому Docker-образ **не собирается на сервере** — собирается в GitHub Actions и публикуется в GitHub Container Registry (`ghcr.io/morkelebthennei-hub/site_pavlova`), сервер только скачивает готовый образ. `deploy/vps-setup.sh` заводит 2 ГБ swap-файла для страховки.
+- Docker: multi-stage build (`deploy/Dockerfile`), `output: standalone` в `next.config.ts`. `deploy/docker-compose.yml` использует `image:` (не `build:`).
+- Nginx как reverse proxy: HTTPS + gzip (`deploy/nginx.conf`, домен art-ohrey.art)
 - Let's Encrypt через certbot, автопродление
-- GitHub Actions workflow: автодеплой на push в `main` (тесты → сборка → деплой по SSH → healthcheck).
-  Workflow-файл уже в проекте (`.github/workflows/deploy.yml`), джоба деплоя ждёт секретов SSH_HOST/SSH_USER/SSH_PRIVATE_KEY.
-- Скрипт первичной настройки VPS — `deploy/vps-setup.sh`, написан под Ubuntu/apt — **не подойдёт** для текущего хостинга (см. ниже), нужно будет переписать под RHEL/dnf или выбросить, если перейдём на статику.
-
-### Реальное состояние купленного хостинга (проверено по SSH 2026-09-12)
-
-Пользователь купил хостинг на reg.ru, но по факту это оказался **виртуальный (shared) хостинг с панелью ISPmanager**, а не VPS с root-доступом:
-
-- ОС: AlmaLinux 8.10 (не Ubuntu)
-- Пользователь хостинга — обычный сайт-пользователь ISPmanager, НЕ root. `sudo` явно запрещён самим хостингом (ответ reg.ru: «На услугах виртуального хостинга... права суперпользователя отсутствуют»)
-- Docker недоступен (нет root)
-- Node.js на сервере — v10.24.0 (2018 год), для Next.js 16 нужна 20+; альтернативных версий/nvm не нашли
-- Apache + nginx уже настроены панелью
-- Домен `art-ohrey.art` уже привязан в панели (сейчас там дефолтная заглушка reg.ru)
-- SSH-доступ по ключу настроен и работает — паролем больше не пользуемся
-
-**Вывод:** Docker/VPS-план из этого файла не реализуем на этом тарифе. Рабочий вариант — статическая сборка Next.js (`output: "export"`, наш сайт и так весь статический) и заливка файлов по SSH/rsync в папку сайта. Минус: `next/image` не сможет оптимизировать картинки на лету (AVIF/WebP) — на статике это не работает, нужен `images.unoptimized: true`.
-
-**Статус:** пользователь уточняет у поддержки reg.ru тариф/возможность Node.js или root, прежде чем куда-либо переходить. Деплой пока не делаем.
+- GitHub Actions (`.github/workflows/deploy.yml`): `build` (lint+build) → `image` (сборка и push в ghcr.io при пуше в main) → `deploy` (SSH: git pull + docker compose pull/up + healthcheck; пропускается без секретов SSH_HOST/SSH_USER/SSH_PRIVATE_KEY)
+- Скрипт первичной настройки VPS — `deploy/vps-setup.sh`: swap, Docker, nginx, certbot, клонирование репозитория
 
 ### Доступы
 
 Реальные значения (IP, логин, путь к SSH-ключу) хранятся только в приватном рабочем файле вне этого репозитория — репозиторий публичный, секреты и данные для входа сюда не публикуем.
 
-- Домен: art-ohrey.art (DNS уже указывает на сервер, подтверждено)
+- Домен: art-ohrey.art (куплен; DNS пока переключается на новый сервер)
+- GHCR-образ: ghcr.io/morkelebthennei-hub/site_pavlova
 - GitHub-репозиторий: https://github.com/morkelebthennei-hub/site_pavlova
 - GitHub-репозиторий: https://github.com/morkelebthennei-hub/site_pavlova
 
@@ -163,3 +146,4 @@ site-project/
   Попутно поймали и починили баг: `npm run lint` до этого никогда не гоняли — обнаружились 2 ошибки правила `react-hooks/set-state-in-effect` (новое строгое правило про setState в effect). Одна — в нашем `components/theme-toggle.tsx` (классический паттерн «дождаться маунта на клиенте» из документации next-themes), переписали через `useSyncExternalStore` вместо `useEffect+useState` — так лint доволен и поведение то же. Вторая — в сгенерированном shadcn-файле `components/ui/carousel.tsx`, который руками не правим (перезапишется при `npx shadcn add`); вместо этого добавили `components/ui/**` в игноры ESLint — это vendor-код shadcn, его не линтуем.
 - 2026-09-12: закреплено правило работы (п.7 выше): всё по движку/стеку, бэкенду, дизайну, доступам и деплою — фиксировать в этом файле сразу и самостоятельно, без напоминаний, и синхронизировать с `PROJECT_LOG.md` в репозитории при каждом пуше.
 - 2026-09-12: пользователь купил хостинг на reg.ru и дал доступ для деплоя. При подключении выяснилось, что это виртуальный хостинг с ISPmanager, а не VPS с root (подробности — в разделе «Инфраструктура и деплой» выше). Установили личный SSH-ключ на сервер (пароль использовали только один раз для этого, нигде не хранится). Docker-план не подходит; предложили статическую сборку как альтернативу. Пользователь решил сам уточнить у поддержки reg.ru тип тарифа/возможность Node.js или root, прежде чем продолжать — деплой отложен, ничего на сайт не заливали.
+- 2026-09-12: пользователь получил второй сервер от reg.ru — на этот раз настоящий VPS с root, Ubuntu 26.04 LTS, подтверждено по SSH. Установили тот же SSH-ключ. Обнаружили, что сервер маленький (1 CPU / ~1 ГБ RAM без swap) — сборка Docker-образа прямо на нём рискованна. Поменяли архитектуру деплоя: образ теперь собирается в GitHub Actions и публикуется в GitHub Container Registry, а сервер только скачивает готовый образ. Изменения: `.github/workflows/deploy.yml` (новая джоба `image`), `deploy/docker-compose.yml` (`image:` вместо `build:`), `deploy/vps-setup.sh` (добавлено создание swap), `deploy/nginx.conf` и `lib/site-config.ts` (домен-заглушка заменена на настоящий `art-ohrey.art`). Первый (shared-хостинг) сервер для проекта больше не используется.
