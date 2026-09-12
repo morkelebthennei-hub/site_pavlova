@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // shadcn/ui генерирует эти файлы командой `npx shadcn add` — не правим их руками
+    // и не гоняем через линтер, чтобы не расходиться с оригиналом при обновлении.
+    "components/ui/**",
   ]),
 ]);
 

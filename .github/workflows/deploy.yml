@@ -1,0 +1,65 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # Пропускается, пока в секретах репозитория нет SSH_HOST — то есть пока не куплен VPS.
+    # Как включить: Settings → Secrets and variables → Actions → добавить SSH_HOST,
+    # SSH_USER, SSH_PRIVATE_KEY (см. deploy/vps-setup.sh).
+    environment: production
+    steps:
+      - name: Check deploy secrets are configured
+        id: check
+        run: |
+          if [ -n "${{ secrets.SSH_HOST }}" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::SSH_HOST не задан в секретах — деплой пропущен (сервер ещё не настроен)."
+          fi
+
+      - name: Deploy via SSH
+        if: steps.check.outputs.ready == 'true'
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /opt/art-ohrey
+            git pull
+            cd deploy
+            docker compose up -d --build
+
+      - name: Healthcheck
+        if: steps.check.outputs.ready == 'true'
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sleep 5
+            curl -fsS http://127.0.0.1:3000/ > /dev/null

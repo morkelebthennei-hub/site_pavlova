@@ -1,0 +1,9 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: art-ohrey-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
