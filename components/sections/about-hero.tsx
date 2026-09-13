@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { ExperienceStat } from "@/components/experience-stat"
+import { AboutHeroCarousel } from "@/components/sections/about-hero-carousel"
+import heroPhotos from "@/content/about-hero-photos.json"
 
 const stats = [
   { value: "103", label: "витража создано" },
@@ -64,14 +66,7 @@ export function AboutHero() {
           </Button>
         </div>
       </div>
-      <div
-        className="aspect-square rounded-2xl border border-border"
-        style={{
-          background:
-            "conic-gradient(from 180deg at 50% 50%, var(--primary), var(--accent) 35%, var(--secondary) 65%, var(--primary))",
-        }}
-        aria-hidden
-      />
+      <AboutHeroCarousel photos={heroPhotos} />
     </section>
   )
 }
