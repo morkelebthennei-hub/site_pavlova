@@ -28,7 +28,7 @@ export function AboutHeroCarousel({ photos }: { photos: HeroPhoto[] }) {
                 alt={photo.alt}
                 fill
                 sizes="(min-width: 768px) 480px, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>
