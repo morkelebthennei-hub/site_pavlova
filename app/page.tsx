@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
+
 import { AboutHero } from "@/components/sections/about-hero";
 import { Services } from "@/components/sections/services";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { Contacts } from "@/components/sections/contacts";
 import { siteConfig } from "@/lib/site-config";
 import contacts from "@/content/contacts.json";
+
+export const metadata: Metadata = {
+  verification: {
+    yandex: "cf777a23ff2ff53f",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
