@@ -19,7 +19,7 @@ export function YandexMetrika() {
             clickmap: false,
             trackLinks: true,
             accurateTrackBounce: true,
-            webvisor: false
+            webvisor: true
           });
         `}
       </Script>
