@@ -100,11 +100,11 @@ export default function PrivacyPolicyPage() {
           <h2 className="font-medium">7. Ваши права</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Вы можете запросить информацию о том, какие данные о вас обрабатываются, а также
-            попросить их удалить — напишите через любой из контактов, указанных на странице{" "}
+            попросить их удалить — напишите через любой из контактов на сайте: на странице{" "}
             <a href="/contacts" className="underline underline-offset-3 hover:text-foreground">
               «Контакты»
-            </a>
-            .
+            </a>{" "}
+            или по email, указанному в подвале сайта.
           </p>
         </div>
 
