@@ -6,6 +6,7 @@ import { Phone } from "lucide-react"
 import contacts from "@/content/contacts.json"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { reachGoal } from "@/lib/metrika"
 
 export function PhoneCard() {
   const [revealed, setRevealed] = useState(false)
@@ -26,7 +27,10 @@ export function PhoneCard() {
             <Button
               variant="link"
               className="h-auto p-0 font-medium"
-              onClick={() => setRevealed(true)}
+              onClick={() => {
+                setRevealed(true)
+                reachGoal("show_phone")
+              }}
             >
               Показать номер
             </Button>
