@@ -28,6 +28,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "ART.OHREY — арт-студия современного витража",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: "ru_RU",
+    type: "website",
+    images: [
+      {
+        url: "/images/about-hero/1.jpg",
+        width: 640,
+        height: 1061,
+        alt: "Ирина Павлова — ART.OHREY",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
