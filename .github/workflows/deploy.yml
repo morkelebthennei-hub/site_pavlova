@@ -93,3 +93,15 @@ jobs:
           script: |
             sleep 5
             curl -fsS http://127.0.0.1:3000/ > /dev/null
+
+      - name: Ping IndexNow (Bing, Yandex и др.)
+        if: steps.check.outputs.ready == 'true'
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: 1833c70fee474afb1fb01a0dc49fd98c
+        run: |
+          urls=$(curl -fsS https://art-ohrey.art/sitemap.xml | grep -oP '(?<=<loc>)[^<]+')
+          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
+          curl -fsS -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"art-ohrey.art\",\"key\":\"$INDEXNOW_KEY\",\"keyLocation\":\"https://art-ohrey.art/$INDEXNOW_KEY.txt\",\"urlList\":$url_list}"
