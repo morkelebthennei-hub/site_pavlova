@@ -21,7 +21,11 @@ export function Highlights() {
                     {highlight.title}
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-muted-foreground">{highlight.text}</p>
+                    <div className="text-muted-foreground">
+                      {highlight.paragraphs.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                      ))}
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
