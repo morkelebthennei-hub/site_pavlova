@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { Button } from "@/components/ui/button";
+import { AboutHeroCarousel } from "@/components/sections/about-hero-carousel";
+import heroPhotos from "@/content/about-hero-photos.json";
 
 export const metadata: Metadata = {
   title: "Обо мне",
@@ -30,14 +32,7 @@ export default function AboutPage() {
             любой интерьер.
           </p>
         </div>
-        <div
-          className="aspect-[4/5] rounded-2xl border border-border"
-          style={{
-            background:
-              "conic-gradient(from 180deg at 50% 50%, var(--primary), var(--accent) 35%, var(--secondary) 65%, var(--primary))",
-          }}
-          aria-hidden
-        />
+        <AboutHeroCarousel photos={heroPhotos} />
       </div>
 
       <div className="mt-16 grid gap-12 sm:grid-cols-3">
