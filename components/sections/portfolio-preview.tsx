@@ -6,7 +6,7 @@ import { PortfolioCarousel } from "@/components/portfolio/portfolio-carousel"
 
 export function PortfolioPreview() {
   return (
-    <section id="portfolio" className="mx-auto max-w-5xl px-4 py-24">
+    <section id="portfolio" className="mx-auto max-w-5xl px-4 py-16">
       <div className="flex items-end justify-between gap-4">
         <h2 className="text-3xl font-semibold tracking-tight">Портфолио</h2>
         <Button render={<Link href="/portfolio" />} nativeButton={false} variant="link">

@@ -10,7 +10,7 @@ import {
 
 export function Highlights() {
   return (
-    <section className="mx-auto max-w-5xl px-4 pb-24">
+    <section className="mx-auto max-w-5xl px-4 pb-16">
       <Accordion className="grid gap-6 sm:grid-cols-2 sm:items-start">
         {highlights.map((highlight) => (
           <Card key={highlight.id}>
