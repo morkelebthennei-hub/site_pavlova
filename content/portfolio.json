@@ -9,7 +9,8 @@
     "id": "joker-portrait",
     "title": "Джокер. Портрет",
     "description": "Крупный витражный портрет — контраст мертвенно-белого лица, зелёных волос и глубокого пурпура костюма.",
-    "image": "/images/portfolio/joker-portrait.jpg"
+    "image": "/images/portfolio/joker-portrait.jpg",
+    "video": "/images/portfolio/joker-portrait-reveal.mov"
   },
   {
     "id": "joker-bat-signal",

@@ -18,6 +18,7 @@ type PortfolioItem = {
   title: string
   description: string
   image: string
+  video?: string
 }
 
 export function PortfolioCard({ item }: { item: PortfolioItem }) {
@@ -58,13 +59,24 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
             className="relative block h-[85vh] w-[85vw] cursor-zoom-out border-0 bg-transparent p-0"
             aria-label={`Закрыть просмотр «${item.title}»`}
           >
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              sizes="85vw"
-              className="object-contain"
-            />
+            {item.video ? (
+              <video
+                src={item.video}
+                poster={item.image}
+                autoPlay
+                muted
+                playsInline
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                sizes="85vw"
+                className="object-contain"
+              />
+            )}
           </DialogClose>
         </DialogPrimitive.Popup>
       </DialogPortal>
