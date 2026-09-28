@@ -56,7 +56,7 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
         >
           <DialogTitle className="sr-only">{item.title}</DialogTitle>
           <DialogClose
-            className="relative block h-[85vh] w-[85vw] cursor-zoom-out border-0 bg-transparent p-0"
+            className="relative block h-[85vh] w-[85vw] cursor-zoom-out overflow-hidden border-0 bg-transparent p-0"
             aria-label={`Закрыть просмотр «${item.title}»`}
           >
             {item.video ? (
@@ -74,7 +74,7 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
                 alt={item.title}
                 fill
                 sizes="85vw"
-                className="object-contain"
+                className="animate-reveal object-contain"
               />
             )}
           </DialogClose>
