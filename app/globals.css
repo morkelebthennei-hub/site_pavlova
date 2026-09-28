@@ -118,16 +118,20 @@
 }
 
 @theme {
-  --animate-reveal: reveal 1.6s ease-out forwards;
+  --animate-reveal: reveal 2.6s linear forwards;
 }
 
 @keyframes reveal {
-  from {
-    filter: brightness(0.12) saturate(0.8);
+  0% {
+    filter: brightness(5%) saturate(60%);
     transform: scale(1);
   }
-  to {
-    filter: brightness(1) saturate(1);
+  45% {
+    filter: brightness(12%) saturate(65%);
+    transform: scale(1.01);
+  }
+  100% {
+    filter: brightness(99%) saturate(99%);
     transform: scale(1.04);
   }
 }
