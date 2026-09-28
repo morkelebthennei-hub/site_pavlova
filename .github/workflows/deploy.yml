@@ -77,11 +77,13 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e
             cd /opt/art-ohrey
             git pull
             cd deploy
             docker compose pull
             docker compose up -d
+            docker image prune -f
 
       - name: Healthcheck
         if: steps.check.outputs.ready == 'true'
