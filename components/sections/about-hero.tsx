@@ -42,7 +42,7 @@ export function AboutHero() {
             </div>
           ))}
         </dl>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button render={<Link href="/portfolio" />} nativeButton={false} size="lg">
             Смотреть портфолио
           </Button>
