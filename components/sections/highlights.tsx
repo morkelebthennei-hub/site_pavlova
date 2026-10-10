@@ -8,10 +8,23 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion"
 
+// В тексте плашек **двойные звёздочки** означают жирный шрифт.
+function renderParagraph(text: string) {
+  return text.split("**").map((part, index) =>
+    index % 2 === 1 ? (
+      <strong key={index} className="font-semibold text-foreground">
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  )
+}
+
 export function Highlights() {
   return (
     <section className="mx-auto max-w-5xl px-4 pb-16">
-      <Accordion className="grid gap-6 sm:grid-cols-2 sm:items-stretch sm:has-[[aria-expanded=true]]:items-start">
+      <Accordion className="grid gap-6 sm:grid-cols-2 sm:auto-rows-fr sm:items-stretch sm:has-[[aria-expanded=true]]:auto-rows-auto sm:has-[[aria-expanded=true]]:items-start">
         {highlights.map((highlight) => (
           <Card key={highlight.id}>
             <div className="px-(--card-spacing)">
@@ -25,7 +38,7 @@ export function Highlights() {
                 <AccordionContent>
                   <div className="text-muted-foreground">
                     {highlight.paragraphs.map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
+                      <p key={index}>{renderParagraph(paragraph)}</p>
                     ))}
                   </div>
                 </AccordionContent>
@@ -33,6 +46,8 @@ export function Highlights() {
             </div>
           </Card>
         ))}
+        {/* Пустая заглушка четвёртой плашки: держит сетку 2×2, только на десктопе. */}
+        <Card aria-hidden className="hidden min-h-20 sm:flex" />
       </Accordion>
     </section>
   )
