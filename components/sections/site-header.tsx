@@ -23,8 +23,11 @@ export function SiteHeader() {
           <span className="font-(family-name:--font-brand) text-2xl leading-none font-semibold tracking-wide">
             ArtOhrey
           </span>
+          <span className="font-(family-name:--font-brand) text-sm leading-none font-medium tracking-[0.14em] whitespace-nowrap text-muted-foreground">
+            Безупречная магия стекла
+          </span>
         </Link>
-        <nav className="order-3 flex w-full items-center justify-between pt-1 pb-1 sm:order-2 sm:ml-auto sm:w-auto sm:gap-6 sm:pb-0">
+        <nav className="order-3 flex w-full items-center justify-between pt-3 pb-1 sm:order-2 sm:ml-auto sm:w-auto sm:gap-6 sm:pt-0 sm:pb-0">
           {navItems.map((item) => (
             <Link
               key={item.href}

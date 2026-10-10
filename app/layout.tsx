@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin", "cyrillic"],
 });
 
-// Шрифт надписи «ArtOhrey» под знаком логотипа.
+// Шрифт надписи «ArtOhrey» и слогана под знаком логотипа.
 const brandFont = Cormorant_Garamond({
   variable: "--font-brand",
-  subsets: ["latin"],
-  weight: ["600"],
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
