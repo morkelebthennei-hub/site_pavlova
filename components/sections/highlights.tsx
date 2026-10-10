@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion"
 
 // В тексте плашек **двойные звёздочки** — жирный шрифт, __двойное подчёркивание__ — подчёркнутый,
-// «> » в начале абзаца — отступ слева (как табуляция).
+// «> » в начале абзаца — отступ слева (как табуляция), «~ » — красная строка (отступ первой строки).
 function renderParagraph(text: string) {
   return text.split(/(\*\*[^*]+\*\*|__[^_]+__)/).map((part, index) => {
     if (part.startsWith("**")) {
@@ -48,9 +48,11 @@ export function Highlights() {
                   <div className="text-muted-foreground">
                     {highlight.paragraphs.map((paragraph, index) => {
                       const indented = paragraph.startsWith("> ")
+                      const firstLine = paragraph.startsWith("~ ")
+                      const className = indented ? "pl-5" : firstLine ? "indent-6" : undefined
                       return (
-                        <p key={index} className={indented ? "pl-5" : undefined}>
-                          {renderParagraph(indented ? paragraph.slice(2) : paragraph)}
+                        <p key={index} className={className}>
+                          {renderParagraph(indented || firstLine ? paragraph.slice(2) : paragraph)}
                         </p>
                       )
                     })}
