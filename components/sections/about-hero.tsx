@@ -39,14 +39,14 @@ export function AboutHero() {
           <li>— рисую витражные интерпретации героев аниме и компьютерных игр</li>
           <li>— и особая любовь — нуарные мистические сюжеты</li>
         </ul>
-        <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-          <div>
+        <dl className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-4">
+          <div className="text-center">
             <dt className="sr-only">опыта</dt>
             <ExperienceStat />
             <p className="text-sm text-muted-foreground">опыта</p>
           </div>
           {stats.map((stat) => (
-            <div key={stat.label}>
+            <div key={stat.label} className="text-center">
               <dt className="sr-only">{stat.label}</dt>
               <dd className="text-2xl font-semibold text-primary">{stat.value}</dd>
               <p className="text-sm text-muted-foreground">{stat.label}</p>
