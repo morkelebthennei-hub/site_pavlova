@@ -148,6 +148,9 @@
   height: 100lvh;
   z-index: -1;
   pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
   background-color: oklch(var(--bg-tint));
   background-image:
     linear-gradient(
