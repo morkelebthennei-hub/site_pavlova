@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { PullToRefresh } from "@/components/pull-to-refresh";
 import { SiteHeader } from "@/components/sections/site-header";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { YandexMetrika } from "@/components/analytics/yandex-metrika";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           disableTransitionOnChange
         >
           <div aria-hidden className="site-bg" />
+          <PullToRefresh />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
