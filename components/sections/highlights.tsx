@@ -45,7 +45,7 @@ export function Highlights() {
                   {highlight.title}
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="text-muted-foreground">
+                  <div className="text-muted-foreground lg:text-justify lg:hyphens-auto">
                     {highlight.paragraphs.map((paragraph, index) => {
                       const indented = paragraph.startsWith("> ")
                       const firstLine = paragraph.startsWith("~ ")
