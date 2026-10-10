@@ -46,8 +46,6 @@ export function Highlights() {
             </div>
           </Card>
         ))}
-        {/* Пустая заглушка четвёртой плашки: держит сетку 2×2, только на десктопе. */}
-        <Card aria-hidden className="hidden min-h-20 sm:flex" />
       </Accordion>
     </section>
   )
