@@ -5,10 +5,7 @@ import { ExperienceStat } from "@/components/experience-stat"
 import { AboutHeroCarousel } from "@/components/sections/about-hero-carousel"
 import heroPhotos from "@/content/about-hero-photos.json"
 
-const stats = [
-  { value: "103", label: "витража создано" },
-  { value: "49", label: "уже нашли свой дом" },
-]
+const stats = [{ value: "103", label: "витража создано" }]
 
 export function AboutHero() {
   return (
@@ -21,11 +18,15 @@ export function AboutHero() {
           ART.OHREY
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-          Добро пожаловать в мир современного витража
+          Добро пожаловать в мир картин, которые никогда не выглядят одинаково
         </h1>
         <p className="mt-6 text-lg text-pretty text-muted-foreground">
-          Меня зовут Ирина — художник и создатель уникальных современных витражей, которые
-          призваны украсить и освежить любой интерьер.
+          Картина на настоящем стекле. Ручная роспись. В единственном экземпляре.
+        </p>
+        <p className="mt-4 text-lg text-pretty text-muted-foreground">
+          Меня зовут Павлова Ирина. Мои картины не имеют тиража. Внимание к каждой детали и
+          природа самого стекла делают невозможным создание двух одинаковых работ. Это тихая
+          роскошь для тех, кто ценит подлинники.
         </p>
         <p className="mt-4 text-pretty text-muted-foreground">
           Я нахожу вдохновение в красоте природы, игре света и цвета. Мои работы отражают
