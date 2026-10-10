@@ -192,6 +192,25 @@
 /* «Стекло»: полупрозрачные карточки с размытием фона и светлой кромкой.
    Карточки shadcn (data-slot="card") и фото портфолио (.glass) — в одном месте,
    сами компоненты shadcn не правим. */
+/* Цвета знака логотипа (components/brand/logo-mark.tsx): на светлой теме темнее и насыщеннее. */
+:root {
+  --logo-c1: #3b66d1;
+  --logo-c2: #6a47dc;
+  --logo-c3: #1b92c2;
+  --logo-c4: #a352cc;
+  --logo-c5: #1e1b5b;
+  --logo-c6: #c7c0ea;
+}
+
+.dark {
+  --logo-c1: #bfe8ff;
+  --logo-c2: #c4b5fd;
+  --logo-c3: #9bf0fd;
+  --logo-c4: #f0dafc;
+  --logo-c5: #ffffff;
+  --logo-c6: #362d51;
+}
+
 :root {
   --glass-top: oklch(1 0 0 / 0.55);
   --glass-bottom: oklch(1 0 0 / 0.35);
