@@ -61,6 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem={false}
           disableTransitionOnChange
         >
+          <div aria-hidden className="site-bg" />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

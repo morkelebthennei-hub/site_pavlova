@@ -136,6 +136,39 @@
   }
 }
 
+.site-bg {
+  display: none;
+}
+
+.dark .site-bg {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: oklch(0.15 0.02 265);
+  background-image:
+    linear-gradient(
+      to right,
+      oklch(0.15 0.02 265 / 0.5),
+      oklch(0.15 0.02 265 / 0.8) 28%,
+      oklch(0.15 0.02 265 / 0.8) 72%,
+      oklch(0.15 0.02 265 / 0.5)
+    ),
+    url("/images/bg/bg-dark.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1100px) {
+  .dark .site-bg {
+    background-image:
+      linear-gradient(oklch(0.15 0.02 265 / 0.8), oklch(0.15 0.02 265 / 0.8)),
+      url("/images/bg/bg-dark.webp");
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
