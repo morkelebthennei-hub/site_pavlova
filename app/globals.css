@@ -179,6 +179,23 @@
   }
 }
 
+/* Firefox на Android двигает fixed-слои вместе со страницей, пока сворачивается
+   адресная строка. Прокручиваем body вместо окна — строка не сворачивается,
+   фон остаётся на месте. Chrome/Safari этот блок не затрагивает. */
+@media (pointer: coarse) {
+  @supports (-moz-appearance: none) {
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
