@@ -23,7 +23,7 @@ export function SiteHeader() {
           <span className="font-(family-name:--font-brand) text-2xl leading-none font-semibold tracking-wide">
             ArtOhrey
           </span>
-          <span className="font-(family-name:--font-brand) text-sm leading-none font-medium tracking-[0.14em] whitespace-nowrap text-muted-foreground">
+          <span className="font-(family-name:--font-brand) text-sm leading-none font-medium tracking-[0.14em] whitespace-nowrap text-muted-foreground sm:font-semibold sm:text-foreground/85">
             Безупречная магия стекла
           </span>
         </Link>
