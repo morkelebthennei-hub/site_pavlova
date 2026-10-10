@@ -13,14 +13,14 @@ const navItems = [
 export function SiteHeader() {
   return (
     <header className="glass-bar border-b border-border">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between px-4 py-2 sm:h-16 sm:flex-nowrap sm:py-0">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between px-4 py-2 sm:flex-nowrap">
         <Link href="/" aria-label="ART.OHREY — на главную" className="order-1 flex items-center">
           <Image
             src="/images/logo/logo-light.png"
             alt="ART.OHREY"
             width={600}
             height={634}
-            className="h-12 w-auto dark:hidden"
+            className="h-36 w-auto dark:hidden"
           />
           <Image
             src="/images/logo/logo-dark.png"
@@ -28,7 +28,7 @@ export function SiteHeader() {
             aria-hidden
             width={600}
             height={634}
-            className="hidden h-12 w-auto dark:block"
+            className="hidden h-36 w-auto dark:block"
           />
         </Link>
         <nav className="order-3 flex w-full items-center justify-between pt-1 pb-1 sm:order-2 sm:ml-auto sm:w-auto sm:gap-6 sm:pb-0">

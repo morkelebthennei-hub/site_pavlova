@@ -37,8 +37,8 @@ export function AboutHeroCarousel({ photos }: { photos: HeroPhoto[] }) {
       </CarouselContent>
       {photos.length > 1 && (
         <>
-          <CarouselPrevious className="max-sm:left-2!" />
-          <CarouselNext className="max-sm:right-2!" />
+          <CarouselPrevious className="max-[1120px]:left-2!" />
+          <CarouselNext className="max-[1120px]:right-2!" />
         </>
       )}
     </Carousel>
