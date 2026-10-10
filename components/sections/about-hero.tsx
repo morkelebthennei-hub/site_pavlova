@@ -15,7 +15,7 @@ export function AboutHero() {
     >
       <div>
         <p className="text-sm font-medium tracking-widest text-primary uppercase">
-          ART.OHREY
+          Арт-студия современного витража
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
           Добро пожаловать в мир картин, которые никогда не выглядят одинаково
