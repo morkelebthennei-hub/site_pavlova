@@ -26,8 +26,8 @@ export function PortfolioCarousel({ items }: { items: PortfolioItem[] }) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="max-sm:left-2!" />
+      <CarouselNext className="max-sm:right-2!" />
     </Carousel>
   )
 }
