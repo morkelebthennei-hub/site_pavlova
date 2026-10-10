@@ -8,7 +8,8 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion"
 
-// В тексте плашек **двойные звёздочки** — жирный шрифт, __двойное подчёркивание__ — подчёркнутый.
+// В тексте плашек **двойные звёздочки** — жирный шрифт, __двойное подчёркивание__ — подчёркнутый,
+// «> » в начале абзаца — отступ слева (как табуляция).
 function renderParagraph(text: string) {
   return text.split(/(\*\*[^*]+\*\*|__[^_]+__)/).map((part, index) => {
     if (part.startsWith("**")) {
@@ -45,9 +46,14 @@ export function Highlights() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="text-muted-foreground">
-                    {highlight.paragraphs.map((paragraph, index) => (
-                      <p key={index}>{renderParagraph(paragraph)}</p>
-                    ))}
+                    {highlight.paragraphs.map((paragraph, index) => {
+                      const indented = paragraph.startsWith("> ")
+                      return (
+                        <p key={index} className={indented ? "pl-5" : undefined}>
+                          {renderParagraph(indented ? paragraph.slice(2) : paragraph)}
+                        </p>
+                      )
+                    })}
                   </div>
                 </AccordionContent>
               </AccordionItem>
