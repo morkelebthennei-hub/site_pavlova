@@ -11,7 +11,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-border">
+    <header className="glass-bar border-b border-border">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between px-4 py-2 sm:h-16 sm:flex-nowrap sm:py-0">
         <Link href="/" className="order-1 text-lg font-semibold tracking-wide">
           ART.OHREY
