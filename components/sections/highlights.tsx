@@ -8,17 +8,25 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion"
 
-// В тексте плашек **двойные звёздочки** означают жирный шрифт.
+// В тексте плашек **двойные звёздочки** — жирный шрифт, __двойное подчёркивание__ — подчёркнутый.
 function renderParagraph(text: string) {
-  return text.split("**").map((part, index) =>
-    index % 2 === 1 ? (
-      <strong key={index} className="font-semibold text-foreground">
-        {part}
-      </strong>
-    ) : (
-      part
-    )
-  )
+  return text.split(/(\*\*[^*]+\*\*|__[^_]+__)/).map((part, index) => {
+    if (part.startsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      )
+    }
+    if (part.startsWith("__")) {
+      return (
+        <u key={index} className="underline-offset-2">
+          {part.slice(2, -2)}
+        </u>
+      )
+    }
+    return part
+  })
 }
 
 export function Highlights() {
