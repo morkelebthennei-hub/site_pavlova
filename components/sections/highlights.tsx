@@ -11,11 +11,14 @@ import {
 export function Highlights() {
   return (
     <section className="mx-auto max-w-5xl px-4 pb-16">
-      <Accordion className="grid gap-6 sm:grid-cols-2 sm:items-start">
+      <Accordion className="grid gap-6 sm:grid-cols-2 sm:items-stretch sm:has-[[aria-expanded=true]]:items-start">
         {highlights.map((highlight) => (
           <Card key={highlight.id}>
-            <div className="px-(--card-spacing)">
-              <AccordionItem value={highlight.id} className="border-b-0">
+            <div className="flex-1 px-(--card-spacing)">
+              <AccordionItem
+                value={highlight.id}
+                className="flex h-full flex-col justify-center border-b-0"
+              >
                 <AccordionTrigger className="font-heading text-lg font-medium">
                   {highlight.title}
                 </AccordionTrigger>
