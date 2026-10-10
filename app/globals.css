@@ -137,23 +137,21 @@
 }
 
 .site-bg {
-  display: none;
-}
-
-.dark .site-bg {
-  display: block;
+  --bg-tint: 0.98 0.005 260;
+  --bg-edge: 0.86;
+  --bg-center: 0.93;
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-color: oklch(0.15 0.02 265);
+  background-color: oklch(var(--bg-tint));
   background-image:
     linear-gradient(
       to right,
-      oklch(0.15 0.02 265 / 0.5),
-      oklch(0.15 0.02 265 / 0.8) 28%,
-      oklch(0.15 0.02 265 / 0.8) 72%,
-      oklch(0.15 0.02 265 / 0.5)
+      oklch(var(--bg-tint) / var(--bg-edge)),
+      oklch(var(--bg-tint) / var(--bg-center)) 28%,
+      oklch(var(--bg-tint) / var(--bg-center)) 72%,
+      oklch(var(--bg-tint) / var(--bg-edge))
     ),
     url("/images/bg/bg-dark.webp");
   background-size: cover;
@@ -161,11 +159,16 @@
   background-repeat: no-repeat;
 }
 
+.dark .site-bg {
+  --bg-tint: 0.15 0.02 265;
+  --bg-edge: 0.5;
+  --bg-center: 0.8;
+}
+
 @media (max-width: 1100px) {
+  .site-bg,
   .dark .site-bg {
-    background-image:
-      linear-gradient(oklch(0.15 0.02 265 / 0.8), oklch(0.15 0.02 265 / 0.8)),
-      url("/images/bg/bg-dark.webp");
+    --bg-edge: var(--bg-center);
   }
 }
 
