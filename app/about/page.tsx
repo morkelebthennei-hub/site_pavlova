@@ -27,9 +27,12 @@ export default function AboutPage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Обо мне</h1>
           <p className="mt-6 text-lg text-pretty text-muted-foreground">
-            Приветствую вас в моём виртуальном ателье витражной росписи! Меня зовут Ирина —
-            художник и создатель уникальных витражей, которые призваны украсить и освежить
-            любой интерьер.
+            Картина на настоящем стекле. Ручная роспись. В единственном экземпляре.
+          </p>
+          <p className="mt-4 text-lg text-pretty text-muted-foreground">
+            Меня зовут Павлова Ирина. Мои картины не имеют тиража. Внимание к каждой детали и
+            природа самого стекла делают невозможным создание двух одинаковых работ. Это тихая
+            роскошь для тех, кто ценит подлинники.
           </p>
         </div>
         <AboutHeroCarousel photos={heroPhotos} />
