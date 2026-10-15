@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import services from "@/content/services.json"
 
 import {
@@ -15,6 +17,22 @@ export function Services() {
         {services.map((service) => (
           <Card key={service.title}>
             <CardHeader>
+              <div className="mb-2">
+                <Image
+                  src={`/images/icons/service-${service.icon}-light.png`}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="size-16 dark:hidden"
+                />
+                <Image
+                  src={`/images/icons/service-${service.icon}-dark.png`}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="hidden size-16 dark:block"
+                />
+              </div>
               <CardTitle className="text-lg">{service.title}</CardTitle>
               <CardDescription>{service.description}</CardDescription>
             </CardHeader>

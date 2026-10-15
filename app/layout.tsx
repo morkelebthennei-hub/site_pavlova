@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/about-hero/1.jpg",
-        width: 640,
-        height: 1061,
-        alt: "Ирина Павлова — ART.OHREY",
+        url: "/images/og/og-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ArtOhrey — Безупречная магия стекла",
       },
     ],
   },
