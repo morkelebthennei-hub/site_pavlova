@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { SectionDivider } from "@/components/brand/section-divider";
 import { AboutHero } from "@/components/sections/about-hero";
 import { Highlights } from "@/components/sections/highlights";
 import { Services } from "@/components/sections/services";
@@ -45,8 +46,11 @@ export default function Home() {
       />
       <AboutHero />
       <Highlights />
+      <SectionDivider />
       <Services />
+      <SectionDivider />
       <PortfolioPreview />
+      <SectionDivider />
       <Contacts />
     </>
   );
