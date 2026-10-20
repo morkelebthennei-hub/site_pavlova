@@ -39,7 +39,13 @@ export function ReviewCard({ review, reverse = false }: { review: Review; revers
   return (
     <article
       className={`glass relative overflow-hidden rounded-2xl border border-border md:grid ${
-        review.portrait ? "md:grid-cols-[4fr_7fr]" : "md:grid-cols-[5fr_6fr]"
+        review.portrait
+          ? reverse
+            ? "md:grid-cols-[7fr_4fr]"
+            : "md:grid-cols-[4fr_7fr]"
+          : reverse
+            ? "md:grid-cols-[6fr_5fr]"
+            : "md:grid-cols-[5fr_6fr]"
       }`}
     >
       <div className={reverse ? "relative md:order-2" : "relative"}>
