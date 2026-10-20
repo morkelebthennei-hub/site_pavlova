@@ -1,3 +1,4 @@
+import { reviewIsoDate } from "@/lib/reviews"
 import { siteConfig } from "@/lib/site-config"
 
 import type { Review } from "@/components/reviews/review-card"
@@ -13,6 +14,7 @@ export function ReviewsJsonLd({ reviews }: { reviews: Review[] }) {
       "@type": "Review",
       author: { "@type": "Person", name: review.name },
       reviewBody: review.text,
+      ...(reviewIsoDate(review) ? { datePublished: reviewIsoDate(review) } : {}),
       itemReviewed: { "@id": `${siteConfig.url}/#organization` },
     })),
   }
