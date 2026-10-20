@@ -5,6 +5,7 @@ import { AboutHero } from "@/components/sections/about-hero";
 import { Highlights } from "@/components/sections/highlights";
 import { Services } from "@/components/sections/services";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
+import { ReviewsPreview } from "@/components/sections/reviews-preview";
 import { Contacts } from "@/components/sections/contacts";
 import { siteConfig } from "@/lib/site-config";
 import contacts from "@/content/contacts.json";
@@ -50,6 +51,8 @@ export default function Home() {
       <Services />
       <SectionDivider />
       <PortfolioPreview />
+      <SectionDivider />
+      <ReviewsPreview />
       <SectionDivider />
       <Contacts />
     </>
