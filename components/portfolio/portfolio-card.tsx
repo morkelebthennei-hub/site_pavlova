@@ -24,7 +24,7 @@ type PortfolioItem = {
 export function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
     <Dialog>
-      <figure className="glass overflow-hidden rounded-2xl border border-border">
+      <figure className="glass flex h-full flex-col overflow-hidden rounded-2xl border border-border">
         <DialogTrigger
           className="relative block aspect-square w-full cursor-zoom-in overflow-hidden border-0 bg-transparent p-0 text-left"
           aria-label={`Открыть «${item.title}» в полном размере`}
@@ -42,7 +42,7 @@ export function PortfolioCard({ item }: { item: PortfolioItem }) {
             </span>
           )}
         </DialogTrigger>
-        <figcaption className="p-5">
+        <figcaption className="flex-1 p-5">
           <h3 className="font-medium">{item.title}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
         </figcaption>

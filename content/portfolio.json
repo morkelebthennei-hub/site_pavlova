@@ -6,11 +6,10 @@
     "image": "/images/portfolio/harley-quinn.jpg"
   },
   {
-    "id": "joker-portrait",
-    "title": "Джокер. Портрет",
-    "description": "Крупный витражный портрет — контраст мертвенно-белого лица, зелёных волос и глубокого пурпура костюма.",
-    "image": "/images/portfolio/joker-portrait.jpg",
-    "video": "/images/portfolio/joker-portrait-reveal.mov"
+    "id": "edward-scissorhands",
+    "title": "Эдвард Руки-ножницы",
+    "description": "Витражный портрет с фирменным бледным гримом и лезвиями-пальцами — дань уважения культовому образу.",
+    "image": "/images/portfolio/edward-scissorhands.jpg"
   },
   {
     "id": "joker-bat-signal",
@@ -25,10 +24,11 @@
     "image": "/images/portfolio/pumpkin-duet.jpg"
   },
   {
-    "id": "edward-scissorhands",
-    "title": "Эдвард Руки-ножницы",
-    "description": "Витражный портрет с фирменным бледным гримом и лезвиями-пальцами — дань уважения культовому образу.",
-    "image": "/images/portfolio/edward-scissorhands.jpg"
+    "id": "joker-portrait",
+    "title": "Джокер. Портрет",
+    "description": "Крупный витражный портрет — контраст мертвенно-белого лица, зелёных волос и глубокого пурпура костюма.",
+    "image": "/images/portfolio/joker-portrait.jpg",
+    "video": "/images/portfolio/joker-portrait-reveal.mov"
   },
   {
     "id": "joker-blade",

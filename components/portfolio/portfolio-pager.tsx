@@ -35,7 +35,7 @@ export function PortfolioPager({
 
   return (
     <div>
-      <div className={`grid gap-6 ${gridClassName}`}>
+      <div className={`grid auto-rows-fr gap-6 ${gridClassName}`}>
         {pageItems.map((item) => (
           <PortfolioCard key={item.id} item={item} />
         ))}
