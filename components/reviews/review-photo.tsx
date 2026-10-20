@@ -12,7 +12,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-// Фото в отзыве: по клику открывается на весь экран, закрывается кликом в любую точку (как в портфолио, но без эффекта проявления).
+// Фото в отзыве — миниатюра: по клику открывается на весь экран, закрывается кликом в любую точку
+// (как в портфолио, но без эффекта проявления).
+// На телефоне — широкая полоска сверху, на компьютере — узкая колонка (вертикальные фото 4:5, горизонтальные — на всю высоту карточки).
 export function ReviewPhoto({
   src,
   alt,
@@ -27,10 +29,8 @@ export function ReviewPhoto({
   return (
     <Dialog>
       <DialogTrigger
-        className={`relative block w-full cursor-zoom-in overflow-hidden border-0 bg-transparent p-0 text-left ${
-          portrait
-            ? "aspect-[3/4]"
-            : "aspect-[4/3] md:aspect-auto md:h-full md:min-h-72"
+        className={`relative block aspect-[21/9] w-full cursor-zoom-in overflow-hidden border-0 bg-transparent p-0 text-left ${
+          portrait ? "md:aspect-[4/5]" : "md:aspect-auto md:h-full md:min-h-44"
         }`}
         aria-label={`Открыть фото в полном размере: ${alt}`}
       >
@@ -38,7 +38,7 @@ export function ReviewPhoto({
           src={src}
           alt={alt}
           fill
-          sizes="(min-width: 768px) 460px, 100vw"
+          sizes="(min-width: 768px) 280px, 100vw"
           className="object-cover"
           style={position ? { objectPosition: position } : undefined}
         />
